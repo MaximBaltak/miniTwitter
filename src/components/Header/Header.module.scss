@@ -1,0 +1,51 @@
+@import "./../../App";
+.header{
+  height: 80px;
+  background: $background;
+  &_container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include container;
+    &_logo{
+      display: block;
+      width: 65px;
+      height: 55px;
+      @include smallMobile{
+        display: none;
+      }
+    }
+    &_title{
+      margin: 0;
+      font-weight: normal;
+      font-size: 36px;
+      color:$title;
+      flex-grow: 1;
+      text-align: center;
+      @include smallMobile{
+        font-size: 24px;
+        text-align: left;
+      }
+
+    }
+    &_hamburger{
+      display: none;
+      outline: none;
+      border: none;
+      background: none;
+      margin: 0 auto;
+      @include bigMobile{
+        display: block;
+      }
+      &_el{
+        width: 46px;
+        border: 2px solid #FFFFFF;
+        margin-top: 15px;
+      }
+      &_el:nth-child(1){
+        margin: 0;
+      }
+    }
+  }
+}

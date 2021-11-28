@@ -1,0 +1,19 @@
+@import "./../../../App";
+.button{
+  display: block;
+  width: 131px;
+  height: 40px;
+  outline: none;
+  background: none;
+  border: 1px solid $mainColor;
+  border-radius: 6px;
+  font-weight: normal;
+  font-size: 13px;
+  color: $mainColor;
+  transition: all .2s;
+  margin-top: 20px;
+  &:hover{
+    background: $mainColor;
+    color: #FFFFFF;
+  }
+}

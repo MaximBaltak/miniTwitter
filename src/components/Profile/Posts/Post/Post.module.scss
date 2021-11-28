@@ -1,0 +1,43 @@
+@import "../../../../App";
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  &_avatar{
+    display: block;
+    width: 44px;
+    height: 44px;
+  }
+  &_text{
+    margin: 0;
+    width: 277px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    word-wrap: break-word;
+    color: $text;
+  }
+  &_buttons{
+    display: flex;
+    width: 53px;
+    justify-content: space-between;
+    align-items: center;
+    &_button{
+      width: 21px;
+      height: 21px;
+      opacity: 0.5;
+    }
+  }
+}
+.wrapper {
+  margin-top: 10px;
+  margin-left: 60px;
+  display: block;
+  &_commentsButton {
+    width: 21px;
+    height: 21px;
+    opacity: 0.5;
+  }
+}
+

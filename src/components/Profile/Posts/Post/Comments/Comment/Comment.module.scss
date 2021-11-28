@@ -1,0 +1,25 @@
+@import "./../../../../../../App";
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  &_avatar{
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+  &_text{
+    margin: 0;
+    width: 160px;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 12px;
+    word-wrap: break-word;
+    color: $text;
+  }
+    &_button{
+      width: 13px;
+      height: 13px;
+    }
+}

@@ -1,0 +1,55 @@
+@import "./../../App";
+.content{
+  position: relative;
+  height: 100%;
+  overflow-x: auto;
+  &::-webkit-scrollbar{
+    width: 0;
+  }
+  &_background{
+    position: fixed;
+    z-index: 0;
+    width: 825px;
+    height: 406px;
+  }
+  &_profile{
+    position: relative;
+    z-index: 1;
+    top: 300px;
+    min-height: 702px;
+    background: #FFFFFF;
+    border-radius: 30px 30px 0 0;
+    padding: 4px 97px 4px 86px;
+    &_flex{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      &_avatar{
+        position: relative;
+        bottom: 51px;
+      }
+      &_name{
+        font-weight: normal;
+        font-size: 18px;
+        color: $text;
+        margin: 0;
+        text-align: center;
+      }
+      &_information{
+        &_el{
+          font-weight: 900;
+          font-size: 18px;
+          color: $text;
+          margin: 9px 0 0;
+          text-align: center;
+          span{
+            font-weight: normal;
+          }
+        }
+      }
+    }
+    &_newPost{
+      margin-top: 96px;
+    }
+  }
+}
