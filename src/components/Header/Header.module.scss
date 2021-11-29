@@ -2,6 +2,12 @@
 .header{
   height: 80px;
   background: $background;
+  @include bigMobile{
+    position: sticky;
+    z-index: 5;
+    top: 0;
+    box-shadow: inset 0 0 20px -2px black;
+  }
   &_container{
     height: 100%;
     display: flex;
@@ -38,14 +44,49 @@
       @include bigMobile{
         display: block;
       }
+      &_active1{
+        transform: rotate(45deg) translate(13px, 13px);
+      }
+      &_active2{
+        transform: rotate(45deg);
+      }
+      &_active3{
+        transform: rotate(-45deg) translate(14px, -13px);
+      }
+
       &_el{
         width: 46px;
         border: 2px solid #FFFFFF;
         margin-top: 15px;
+        transition: all .2s;
       }
       &_el:nth-child(1){
         margin: 0;
       }
     }
   }
+}
+.overlay{
+  position: absolute;
+  height: 100vh;
+  background: rgba(0,0,0,.9);
+  z-index: 5;
+  top: 100%;
+  left: 0;
+  right: 0;
+  &_nav{
+    list-style-type: none;
+    padding: 0;
+    width: 260px;
+    margin: 20px auto;
+    &_link{
+      width: 100%;
+      font-size: 20px;
+      color: #FFFFFF;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+
 }

@@ -4,6 +4,9 @@
   height: 668px;
   background: #E5EAF6;
   padding: 20px 12px;
+  @include bigMobile{
+    display: none;
+  }
   &_title{
     font-weight: 900;
     font-size: 25px;

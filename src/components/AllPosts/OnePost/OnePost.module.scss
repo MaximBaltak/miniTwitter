@@ -1,35 +1,52 @@
-@import "../../../../App";
+@import "./../../../App";
 .container{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+  @include bigMobile{
+    border-bottom: solid 1px $mainColor;
+    padding-bottom: 10px;
+  }
   &_avatar{
     display: block;
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
+    @include tablet{
+      width: 45px;
+      height: 45px;
+    }
+    @include bigMobile{
+      width: 56px;
+      height: 56px;
+    }
+
   }
   &_text{
     margin: 0;
     width: 277px;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 20px;
     word-wrap: break-word;
     color: $text;
-    @include mediumMobile{
+    @include tablet{
+      font-size: 16px;
+      width: 250px;
+    }
+    @include bigMobile{
+      font-size: 18px;
       flex-grow: 1;
+      width: 100%;
       margin-left: 20px;
+
     }
   }
   &_buttons{
     display: flex;
-    width: 53px;
+    width: 27px;
     justify-content: space-between;
-    align-items: flex-start;
-    @include mediumMobile {
-      flex-flow: column;
-    }
+    align-items: center;
     &_wrapper{
       &_like{
         width: 21px;
@@ -41,12 +58,9 @@
       }
     }
     &_button{
-      width: 21px;
-      height: 21px;
+      width: 27px;
+      height: 27px;
       opacity: 0.5;
-      @include mediumMobile {
-        margin-top: 10px;
-      }
     }
   }
 }
@@ -54,12 +68,12 @@
   margin-top: 10px;
   margin-left: 60px;
   display: block;
-  @include mediumMobile{
+  @include bigMobile{
     margin: 10px auto;
   }
   &_commentsButton {
-    width: 21px;
-    height: 21px;
+    width: 27px;
+    height: 27px;
     opacity: 0.5;
     @include mediumMobile{
       margin-left: 60px;

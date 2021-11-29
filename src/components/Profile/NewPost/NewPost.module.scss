@@ -1,6 +1,12 @@
 @import "./../../../App";
 .newPost{
   width: 320px;
+  @include tablet{
+    margin: 0 auto;
+  }
+  @include mediumMobile{
+    width: 100%;
+  }
   &_title{
     font-weight: normal;
     font-size: 18px;
