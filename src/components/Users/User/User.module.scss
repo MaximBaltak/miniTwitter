@@ -13,6 +13,9 @@
     min-height: 83px;
     flex-wrap: wrap;
   }
+  &_link{
+    text-decoration: none;
+  }
   &_avatar{
     display: block;
     margin: 0 auto;

@@ -9,15 +9,16 @@ const Nav = () => {
             <hr className={styles.nav_el}/>
             <ul className={styles.nav_menu}>
                 <li className={styles.nav_menu_el}>
-                    <a className={styles.nav_menu_el_link} href='#'>Мой профиль</a>
+                    <NavLink className={styles.nav_menu_el_link} to='/network/:id'>Мой профиль</NavLink>
                 </li>
                 <li className={styles.nav_menu_el}>
-                    <a className={styles.nav_menu_el_link} href='#'>Все пользователи</a>
+                    <NavLink className={styles.nav_menu_el_link} to='/network/users'>Все пользователи</NavLink>
                 </li>
                 <li className={styles.nav_menu_el}>
-                    <a className={styles.nav_menu_el_link} href='#'>Все посты</a>
+                    <NavLink className={styles.nav_menu_el_link} to='/network/posts'>Все посты</NavLink>
                 </li>
             </ul>
+            <NavLink className={styles.nav_menu_exit} to='/'>Выйти</NavLink>
         </nav>
     );
 };

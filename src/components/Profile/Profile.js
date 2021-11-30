@@ -9,7 +9,7 @@ const Profile = () => {
     let [showInfo, setShowInfo] = useState(false)
     return (
         <main className={styles.content}>
-            ё
+            <img className={styles.content_background} src={backgroundProfile} alt="background"/>
             <div className={styles.content_profile}>
                 <div className={styles.content_profile_flex}>
                     <img className={styles.content_profile_flex_avatar} src={avatar} alt="avatar"

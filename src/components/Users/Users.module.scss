@@ -68,6 +68,9 @@
       @include bigMobile{
         width: 100%;
       }
+      &_link{
+        text-decoration: none;
+      }
     }
   }
 }

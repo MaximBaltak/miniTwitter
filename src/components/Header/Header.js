@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from './Header.module.scss'
 import logo from '../../img/logo.png'
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
     let [activeHamburger, setActiveHamburger] = useState(false)
@@ -20,9 +21,10 @@ const Header = () => {
             </div>
             {activeHamburger ? <div className={styles.overlay}>
                 <ul className={styles.overlay_nav}>
-                    <li className={styles.overlay_nav_link}>Мой профиль</li>
-                    <li className={styles.overlay_nav_link}>Все пользователи</li>
-                    <li className={styles.overlay_nav_link}>Все посты</li>
+                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_a} to='/network/:id'>Мой профиль</NavLink></li>
+                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_a} to='/network/users'>Все пользователи</NavLink></li>
+                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_a} to='/network/posts'>Все посты</NavLink></li>
+                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_exit} to='/'>Выйти </NavLink></li>
                 </ul>
             </div> : null}
         </header>

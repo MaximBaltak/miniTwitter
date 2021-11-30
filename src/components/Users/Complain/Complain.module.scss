@@ -1,0 +1,78 @@
+@import "./../../../App";
+.overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  height: 100vh;
+  background: rgba(0,0,0,.7);
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include mediumMobile{
+    display: none;
+  }
+  .window{
+    position: absolute;
+    width: 800px;
+    min-height: 501px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 9px 7px rgba(0, 0, 0, 0.25);
+    padding: 68px 28px;
+    @include tablet{
+      width: 100%;
+    }
+
+    &_title{
+      margin: 0;
+      text-align: center;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 33px;
+      color: $text;
+    }
+    &_wrapper{
+      margin-top: 32px;
+      &_text{
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 33px;
+        color: rgba(0, 0, 0, 0.32);
+        @include tablet{
+            text-align: center;
+        }
+      }
+    }
+    &_input{
+      display: block;
+      margin-top: 34px;
+      border: none;
+      outline: none;
+      background: none;
+      resize: none;
+      border-bottom: solid 1px $mainColor;
+      width: 536px;
+      height: 150px;
+      color: $text;
+      font-weight: normal;
+      font-size: 18px;
+      padding: 5px;
+      @include tablet{
+        width: 60%;
+      }
+      @include bigMobile{
+        width: 100%;
+      }
+
+      &::placeholder{
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 33px;
+        color: #BBB9B9;
+      }
+    }
+
+  }
+}

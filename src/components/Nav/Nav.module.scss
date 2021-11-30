@@ -33,5 +33,14 @@
         text-decoration: none;
       }
     }
+    &_exit{
+      display: block;
+      margin-top: 100px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 20px;
+      color: $mainColor;
+      text-decoration: none;
+    }
   }
 }

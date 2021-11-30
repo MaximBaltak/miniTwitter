@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   font-family: 'Vollkorn', serif;
   background: #E5EAF6;
+  position: relative;
 }
 
 
