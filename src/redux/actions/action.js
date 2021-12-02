@@ -7,6 +7,11 @@ import inputComplain from "./usersPage/inputComplain";
 import getUser from "./profilePage/getUser";
 import getComments from "./profilePage/getComments";
 import toggleComments from "./profilePage/toggleComments";
+import addComment from "./profilePage/addComment";
+import addPost from "./profilePage/addPost";
+import deletePost from "./profilePage/deletePost";
+import inputComment from "./profilePage/inputComment";
+import inputNewPost from "./profilePage/inputNewPost";
 const actions={
     getUsers,
     inputSearch,
@@ -17,5 +22,10 @@ const actions={
     getUser,
     getComments,
     toggleComments,
+    addComment,
+    addPost,
+    deletePost,
+    inputComment,
+    inputNewPost
 }
 export default actions

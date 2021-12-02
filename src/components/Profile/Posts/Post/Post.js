@@ -5,7 +5,7 @@ import icons from '../../../../img/icons.svg'
 import Comments from "./Comments/Comments";
 import {useDispatch} from "react-redux";
 import actions from "../../../../redux/actions/action";
-const Post = ({post,showComments}) => {
+const Post = ({post,showComments,deletePostId,changeNewComment,addNewComment}) => {
     let dispatch=useDispatch()
     useEffect(()=>{
         dispatch(actions.getComments(post.id))
@@ -22,7 +22,7 @@ const Post = ({post,showComments}) => {
                         </svg>
                         <p className={styles.container_buttons_wrapper_count}>99+</p>
                     </div>
-                    <svg className={styles.container_buttons_button}>
+                    <svg onClick={()=>deletePostId(post.id)} className={styles.container_buttons_button}>
                         <use xlinkHref={`${icons}#delete`}/>
                     </svg>
                 </div>
@@ -31,7 +31,7 @@ const Post = ({post,showComments}) => {
                 {post.showComments?
                     <div>
                     <p className={styles.wrapper_countComments_write} onClick={()=>showComments(post.id)}>Скрыть все</p>
-                    <Comments comments={post.comments} />
+                    <Comments post={post} changeNewComment={changeNewComment} addNewComment={addNewComment} />
                     </div>
                     :
                     <div>

@@ -8,7 +8,7 @@ import {useParams} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import actions from "../../redux/actions/action";
 
-const Profile = ({user,posts,showComments}) => {
+const Profile = ({user,posts,textNewPost,showComments,changeNewPost,changeNewComment,addNewPost,addNewComment,deletePostId}) => {
     let params=useParams()
     let dispatch=useDispatch()
     useEffect(()=>{
@@ -35,9 +35,9 @@ const Profile = ({user,posts,showComments}) => {
                        className={styles.content_profile_flex_desc}>Подробнее</p>
                 </div>
                 <div className={styles.content_profile_newPost}>
-                    <NewPost/>
+                    <NewPost addNewPost={addNewPost} textNewPost={textNewPost} changeNewPost={changeNewPost}/>
                 </div>
-                <Posts showComments={showComments} posts={posts}/>
+                <Posts deletePostId={deletePostId} showComments={showComments} posts={posts} changeNewComment={changeNewComment} addNewComment={addNewComment}/>
             </div>
         </main>
     );

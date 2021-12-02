@@ -31,6 +31,8 @@
       flex-flow: column;
     }
     &_wrapper{
+      transition: all .2s;
+      cursor: pointer;
       &_like{
         width: 21px;
         height: 21px;
@@ -39,11 +41,20 @@
         text-align: center;
         margin: -12px 0 0;
       }
+      &:hover{
+        transform: scale(1.2);
+      }
     }
     &_button{
       width: 21px;
       height: 21px;
       opacity: 0.5;
+      transition: all .2s;
+      cursor: pointer;
+      &:hover{
+        opacity: 1;
+        transform: scale(1.2);
+      }
       @include mediumMobile {
         margin-top: 10px;
       }
