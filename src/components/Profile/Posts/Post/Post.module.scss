@@ -51,6 +51,7 @@
   }
 }
 .wrapper {
+  position: relative;
   margin-top: 10px;
   margin-left: 60px;
   display: block;
@@ -58,11 +59,31 @@
     margin: 10px auto;
   }
   &_commentsButton {
+    cursor: pointer;
     width: 21px;
     height: 21px;
     opacity: 0.5;
     @include mediumMobile{
       margin-left: 60px;
+    }
+  }
+  &_countComments{
+    position: absolute;
+    margin: 0;
+    top: -4px;
+    left: 25px;
+    font-weight: normal;
+    font-size: 16px;
+    color: black;
+    @include mediumMobile {
+      left: 84px;
+    }
+    &_write{
+      margin: 0 auto;
+      color: $background;
+      font-size: 16px;
+      font-weight: normal;
+      cursor: pointer;
     }
   }
 }

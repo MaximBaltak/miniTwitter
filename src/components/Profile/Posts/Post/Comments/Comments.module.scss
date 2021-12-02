@@ -42,7 +42,12 @@
         font-size: 13px;
         color: #BBB9B9;
       }
-
+      &_toButtons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
     }
   }
 }

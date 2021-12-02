@@ -1,11 +1,19 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Profile.module.scss'
 import backgroundProfile from './../../img/backgroundProfile.png'
 import avatar from './../../img/avatar.png'
 import NewPost from "./NewPost/NewPost";
 import Posts from "./Posts/Posts";
+import {useParams} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import actions from "../../redux/actions/action";
 
-const Profile = () => {
+const Profile = ({user,posts,showComments}) => {
+    let params=useParams()
+    let dispatch=useDispatch()
+    useEffect(()=>{
+        dispatch(actions.getUser(params.id))
+    },[])
     let [showInfo, setShowInfo] = useState(false)
     return (
         <main className={styles.content}>
@@ -14,13 +22,13 @@ const Profile = () => {
                 <div className={styles.content_profile_flex}>
                     <img className={styles.content_profile_flex_avatar} src={avatar} alt="avatar"
                          title='Александр Попов'/>
-                    <p className={styles.content_profile_flex_name}>Александр Попов</p>
+                    <p className={styles.content_profile_flex_name}>{user.name}</p>
                     <div
                         className={[styles.content_profile_flex_information, showInfo ? styles.content_profile_flex_activeInformation : ''].join(' ')}>
-                        <p className={styles.content_profile_flex_information_el}>город: <span>Калининград</span></p>
-                        <p className={styles.content_profile_flex_information_el}>email: <span>alexandr30@mail.ru</span>
+                        <p className={styles.content_profile_flex_information_el}>город: <span>{user.city}</span></p>
+                        <p className={styles.content_profile_flex_information_el}>email: <span>{user.email}</span>
                         </p>
-                        <p className={styles.content_profile_flex_information_el}>телефон: <span>+7 (909) 786-98-08</span>
+                        <p className={styles.content_profile_flex_information_el}>телефон: <span>{user.tele}</span>
                         </p>
                     </div>
                     <p onClick={() => setShowInfo(prev => !prev)}
@@ -29,7 +37,7 @@ const Profile = () => {
                 <div className={styles.content_profile_newPost}>
                     <NewPost/>
                 </div>
-                <Posts/>
+                <Posts showComments={showComments} posts={posts}/>
             </div>
         </main>
     );

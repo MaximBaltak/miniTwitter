@@ -1,9 +1,12 @@
-import getUsers from "./getUsers";
-import inputSearch from "./inputSearch";
-import searchUsers from "./searchUsers";
-import toggleComplainModal from "./toggleComplainModal";
-import submitComplain from "./submitModal";
-import inputComplain from "./inputComplain";
+import getUsers from "./usersPage/getUsers";
+import inputSearch from "./usersPage/inputSearch";
+import searchUsers from "./usersPage/searchUsers";
+import toggleComplainModal from "./usersPage/toggleComplainModal";
+import submitComplain from "./usersPage/submitModal";
+import inputComplain from "./usersPage/inputComplain";
+import getUser from "./profilePage/getUser";
+import getComments from "./profilePage/getComments";
+import toggleComments from "./profilePage/toggleComments";
 const actions={
     getUsers,
     inputSearch,
@@ -11,5 +14,8 @@ const actions={
     toggleComplainModal,
     submitComplain,
     inputComplain,
+    getUser,
+    getComments,
+    toggleComments,
 }
 export default actions

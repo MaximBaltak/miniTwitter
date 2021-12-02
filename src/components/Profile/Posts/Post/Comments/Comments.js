@@ -3,14 +3,12 @@ import Button from "../../../../Layouts/Button/Button";
 import styles from './Comments.module.scss'
 import avatar from './../../../../../img/avatar.png'
 import Comment from "./Comment/Comment";
-const Comments = () => {
+const Comments = ({comments}) => {
     return (
         <>
             <ul className={styles.comments}>
-                <li className={styles.comments_comment}><Comment /></li>
-                <li className={styles.comments_comment}><Comment /></li>
-                <li className={styles.comments_comment}><Comment /></li>
-                <li className={styles.comments_comment}><Comment /></li>
+                {comments? comments.map((comment,i)=>
+                    <li key={i} className={styles.comments_comment}><Comment comment={comment} /></li>):null}
             </ul>
             <div className={styles.container}>
                 <img className={styles.container_avatar} src={avatar} alt='avatar'/>

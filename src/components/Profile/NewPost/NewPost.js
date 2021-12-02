@@ -7,7 +7,7 @@ const NewPost = () => {
         <div className={styles.newPost}>
             <label className={styles.newPost_title} htmlFor='newPost'>Новый пост:</label>
             <textarea className={styles.newPost_input} name="newPost" id="newPost" placeholder='Что нового?'/>
-            <Button text='Подписаться'/>
+            <Button text='Поделиться'/>
         </div>
     );
 };
