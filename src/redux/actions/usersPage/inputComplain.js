@@ -1,6 +1,6 @@
-const inputComplain=text=>{
+const inputComplain = text => {
     return {
-        type:'INPUT_COMPLAIN',
+        type: 'INPUT_COMPLAIN',
         text
     }
 }

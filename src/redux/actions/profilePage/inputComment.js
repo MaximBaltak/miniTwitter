@@ -1,6 +1,6 @@
-const inputComment=(text,postId)=>{
-    return{
-        type:'INPUT_COMMENT',
+const inputComment = (text, postId) => {
+    return {
+        type: 'INPUT_COMMENT',
         text,
         postId
     }

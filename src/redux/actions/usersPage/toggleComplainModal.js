@@ -1,6 +1,6 @@
-const toggleComplainModal=(to='')=>{
+const toggleComplainModal = (to = '') => {
     return {
-        type:'TOGGLE_MODAL',
+        type: 'TOGGLE_MODAL',
         to
     }
 }

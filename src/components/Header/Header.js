@@ -21,10 +21,14 @@ const Header = () => {
             </div>
             {activeHamburger ? <div className={styles.overlay}>
                 <ul className={styles.overlay_nav}>
-                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_a} to='/network/:id'>Мой профиль</NavLink></li>
-                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_a} to='/network/users'>Все пользователи</NavLink></li>
-                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_a} to='/network/posts'>Все посты</NavLink></li>
-                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_exit} to='/'>Выйти </NavLink></li>
+                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_a}
+                                                                     to='/network/100'>Мой профиль</NavLink></li>
+                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_a}
+                                                                     to='/network/users'>Все пользователи</NavLink></li>
+                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_a}
+                                                                     to='/network/posts'>Все посты</NavLink></li>
+                    <li className={styles.overlay_nav_link}><NavLink className={styles.overlay_nav_link_exit}
+                                                                     to='/'>Выйти </NavLink></li>
                 </ul>
             </div> : null}
         </header>

@@ -1,6 +1,6 @@
-const toggleComments=postId=>{
-    return{
-        type:'TOGGLE_COMMENTS',
+const toggleComments = postId => {
+    return {
+        type: 'TOGGLE_COMMENTS',
         postId
     }
 }

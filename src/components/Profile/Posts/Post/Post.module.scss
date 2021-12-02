@@ -1,15 +1,19 @@
 @import "../../../../App";
-.container{
+
+.container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  &_avatar{
+
+  &_avatar {
     display: block;
     width: 44px;
     height: 44px;
+    border-radius: 100%;
   }
-  &_text{
+
+  &_text {
     margin: 0;
     width: 277px;
     font-weight: normal;
@@ -17,12 +21,13 @@
     line-height: 20px;
     word-wrap: break-word;
     color: $text;
-    @include mediumMobile{
+    @include mediumMobile {
       flex-grow: 1;
       margin-left: 20px;
     }
   }
-  &_buttons{
+
+  &_buttons {
     display: flex;
     width: 53px;
     justify-content: space-between;
@@ -30,55 +35,65 @@
     @include mediumMobile {
       flex-flow: column;
     }
-    &_wrapper{
+
+    &_wrapper {
       transition: all .2s;
       cursor: pointer;
-      &_like{
+
+      &_like {
         width: 21px;
         height: 21px;
       }
-      &_count{
+
+      &_count {
         text-align: center;
         margin: -12px 0 0;
       }
-      &:hover{
+
+      &:active {
         transform: scale(1.2);
       }
     }
-    &_button{
+
+    &_button {
       width: 21px;
       height: 21px;
       opacity: 0.5;
       transition: all .2s;
       cursor: pointer;
-      &:hover{
+
+      &:hover {
         opacity: 1;
         transform: scale(1.2);
       }
+
       @include mediumMobile {
         margin-top: 10px;
       }
     }
   }
 }
+
 .wrapper {
   position: relative;
   margin-top: 10px;
   margin-left: 60px;
   display: block;
-  @include mediumMobile{
+  @include mediumMobile {
     margin: 10px auto;
   }
+
   &_commentsButton {
     cursor: pointer;
     width: 21px;
     height: 21px;
     opacity: 0.5;
-    @include mediumMobile{
+    @include mediumMobile {
       margin-left: 60px;
     }
   }
-  &_countComments{
+
+  &_countComments {
     position: absolute;
     margin: 0;
     top: -4px;
@@ -89,7 +104,8 @@
     @include mediumMobile {
       left: 84px;
     }
-    &_write{
+
+    &_write {
       margin: 0 auto;
       color: $background;
       font-size: 16px;

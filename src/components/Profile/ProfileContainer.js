@@ -2,38 +2,42 @@ import {connect} from "react-redux";
 import Profile from "./Profile";
 import actions from "../../redux/actions/action";
 
-const mapStateToProps=state=>{
-    return{
+const mapStateToProps = state => {
+    return {
         user: state.profilePage.user,
-        posts:state.profilePage.posts,
-        textNewPost:state.profilePage.inputNewPost,
+        posts: state.profilePage.posts,
+        textNewPost: state.profilePage.inputNewPost,
     }
 }
-const mapDispatchToProps=dispatch=>{
-    return{
-        showComments: postId=>{
+const mapDispatchToProps = dispatch => {
+    return {
+        showComments: postId => {
             dispatch(actions.toggleComments(postId))
         },
-        changeNewPost: text=>{
+        changeNewPost: text => {
             dispatch(actions.inputNewPost(text))
         },
-        changeNewComment: (text,postId)=>{
-            dispatch(actions.inputComment(text,postId))
+        changeNewComment: (text, postId) => {
+            dispatch(actions.inputComment(text, postId))
         },
-        addNewPost: ()=>{
+        addNewPost: () => {
             dispatch(actions.addPost())
         },
-        addNewComment: postId=>{
-            dispatch(actions.addComment(postId))
+        addNewComment: (postId, userId) => {
+            dispatch(actions.addComment(postId, userId))
         },
-        deletePostId:id=>{
+        deletePostId: id => {
             dispatch(actions.deletePost(id))
+        },
+        setPostLike: (id, value) => {
+            dispatch(actions.setLikePost(id, value))
+        },
+        setCommentLike: (postId, commentId, value) => {
+            dispatch(actions.setLikeComment(postId, commentId, value))
         }
-
-
     }
 }
 
-const ProfileContainer=connect(mapStateToProps,mapDispatchToProps)(Profile)
+const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
 export default ProfileContainer
 

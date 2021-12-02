@@ -1,21 +1,25 @@
 @import "./../../App";
-.content{
+
+.content {
   height: 100%;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
   padding: 27px 51px;
-  &::-webkit-scrollbar{
+
+  &::-webkit-scrollbar {
     width: 0;
   }
-  &_search{
+
+  &_search {
     position: relative;
     width: 379px;
     margin: 0 auto;
-    @include mediumMobile{
+    @include mediumMobile {
       width: 100%;
     }
-    &_input{
+
+    &_input {
       display: block;
       width: 100%;
       height: 52px;
@@ -27,13 +31,15 @@
       font-size: 18px;
       padding: 5px;
       font-weight: normal;
-      &::placeholder{
+
+      &::placeholder {
         font-size: 18px;
         font-weight: normal;
         color: #BBB9B9;
       }
     }
-    &_button{
+
+    &_button {
       display: block;
       position: absolute;
       width: 29px;
@@ -44,18 +50,19 @@
       background: none;
       top: 20px;
       left: 350px;
-      @include mediumMobile{
-       left: 90%;
+      @include mediumMobile {
+        left: 90%;
       }
 
-      &_svg{
+      &_svg {
         width: 100%;
         height: 100%;
         opacity: 0.4;
       }
     }
   }
-  &_users{
+
+  &_users {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -63,12 +70,14 @@
     list-style-type: none;
     padding: 0;
     margin-top: 74px;
-    &_el{
+
+    &_el {
       margin: 40px;
-      @include bigMobile{
+      @include bigMobile {
         width: 100%;
       }
-      &_link{
+
+      &_link {
         text-decoration: none;
       }
     }

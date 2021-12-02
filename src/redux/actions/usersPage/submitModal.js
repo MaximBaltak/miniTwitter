@@ -1,6 +1,6 @@
-const submitComplain=(text)=>{
+const submitComplain = (text) => {
     return {
-        type:'SUBMIT_COMPLAIN',
+        type: 'SUBMIT_COMPLAIN',
         text
     }
 }

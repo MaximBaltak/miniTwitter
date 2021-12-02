@@ -1,39 +1,46 @@
 @import "./../../App";
-.nav{
+
+.nav {
   width: 255px;
   height: 668px;
   background: #E5EAF6;
   padding: 20px 12px;
-  @include bigMobile{
+  @include bigMobile {
     display: none;
   }
-  &_title{
+
+  &_title {
     font-weight: 900;
     font-size: 25px;
     color: $mainColor;
     margin: 0;
     text-align: center;
   }
-  &_el{
+
+  &_el {
     width: 100%;
     border: 1px solid $mainColor;
     margin-top: 14px;
   }
-  &_menu{
+
+  &_menu {
     width: 100%;
     list-style-type: none;
     padding: 0;
-    &_el{
+
+    &_el {
       text-align: center;
       margin-top: 52px;
-      &_link{
+
+      &_link {
         font-weight: 500;
         font-size: 20px;
         color: $background;
         text-decoration: none;
       }
     }
-    &_exit{
+
+    &_exit {
       display: block;
       margin-top: 100px;
       text-align: center;

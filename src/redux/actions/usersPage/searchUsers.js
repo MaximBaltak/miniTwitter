@@ -1,6 +1,6 @@
-const searchUsers=()=>{
+const searchUsers = () => {
     return {
-        type:'SEARCH'
+        type: 'SEARCH'
     }
 }
 export default searchUsers

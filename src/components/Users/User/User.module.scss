@@ -1,11 +1,12 @@
 @import "./../../../App";
-.card{
+
+.card {
   width: 238px;
   min-height: 198px;
   background: #FFFFFF;
   box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
   padding: 16px;
-  @include bigMobile{
+  @include bigMobile {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -13,43 +14,49 @@
     min-height: 83px;
     flex-wrap: wrap;
   }
-  &_link{
+
+  &_link {
     text-decoration: none;
   }
-  &_avatar{
+
+  &_avatar {
     display: block;
     margin: 0 auto;
     width: 100px;
     height: 100px;
-    @include mediumMobile{
+    border-radius: 100%;
+    @include mediumMobile {
       width: 50px;
       height: 50px;
     }
   }
-  &_name{
+
+  &_name {
     margin: 13px auto 0;
     text-align: center;
     font-weight: normal;
     font-size: 18px;
     color: $text;
-    @include mediumMobile{
+    @include mediumMobile {
       font-size: 16px;
     }
   }
-  &_countPost{
+
+  &_countPost {
     margin: 13px auto 0;
     text-align: center;
     font-weight: normal;
     font-size: 18px;
     color: $text;
     display: none;
-    @include mediumMobile{
+    @include mediumMobile {
       display: block;
       font-size: 16px;
-    };
+    }
+  ;
   }
 
-  &_button{
+  &_button {
     display: block;
     outline: none;
     background: none;
@@ -58,10 +65,11 @@
     margin: 13px auto;
     width: 35px;
     height: 35px;
-    @include mediumMobile{
+    @include mediumMobile {
       display: none;
     }
-    &_svg{
+
+    &_svg {
       height: 100%;
       width: 100%;
       opacity: 0.5;

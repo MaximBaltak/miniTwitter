@@ -1,6 +1,6 @@
-const deletePost=id=>{
-    return{
-        type:'DELETE_POST',
+const deletePost = id => {
+    return {
+        type: 'DELETE_POST',
         id
     }
 }

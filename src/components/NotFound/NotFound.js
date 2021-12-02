@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './NotFound.module.scss'
 import notFound from './../../img/404.png'
+
 const NotFound = () => {
     return (
         <div className={styles.content}>

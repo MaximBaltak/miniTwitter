@@ -12,7 +12,11 @@ import addPost from "./profilePage/addPost";
 import deletePost from "./profilePage/deletePost";
 import inputComment from "./profilePage/inputComment";
 import inputNewPost from "./profilePage/inputNewPost";
-const actions={
+import setLikePost from "./profilePage/setLikePost";
+import setLikeComment from "./profilePage/setLikeComment";
+import setAuth from "./profilePage/setAuth";
+
+const actions = {
     getUsers,
     inputSearch,
     searchUsers,
@@ -26,6 +30,9 @@ const actions={
     addPost,
     deletePost,
     inputComment,
-    inputNewPost
+    inputNewPost,
+    setLikePost,
+    setLikeComment,
+    setAuth,
 }
 export default actions

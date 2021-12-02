@@ -1,6 +1,6 @@
-const inputNewPost=text=>{
-    return{
-        type:'INPUT_NEW_POST',
+const inputNewPost = text => {
+    return {
+        type: 'INPUT_NEW_POST',
         text
     }
 }

@@ -1,95 +1,109 @@
 @import "./../../App";
-.header{
+
+.header {
   height: 80px;
   background: $background;
-  @include bigMobile{
+  @include bigMobile {
     position: sticky;
     z-index: 5;
     top: 0;
     box-shadow: inset 0 0 20px -2px black;
   }
-  &_container{
+
+  &_container {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     @include container;
-    &_logo{
+
+    &_logo {
       display: block;
       width: 65px;
       height: 55px;
-      @include smallMobile{
+      @include smallMobile {
         display: none;
       }
     }
-    &_title{
+
+    &_title {
       margin: 0;
       font-weight: normal;
       font-size: 36px;
-      color:$title;
+      color: $title;
       flex-grow: 1;
       text-align: center;
-      @include smallMobile{
+      @include smallMobile {
         font-size: 24px;
         text-align: left;
       }
 
     }
-    &_hamburger{
+
+    &_hamburger {
       display: none;
       outline: none;
       border: none;
       background: none;
       margin: 0 auto;
-      @include bigMobile{
+      @include bigMobile {
         display: block;
       }
-      &_active1{
+
+      &_active1 {
         transform: rotate(45deg) translate(13px, 13px);
       }
-      &_active2{
+
+      &_active2 {
         transform: rotate(45deg);
       }
-      &_active3{
+
+      &_active3 {
         transform: rotate(-45deg) translate(14px, -13px);
       }
 
-      &_el{
+      &_el {
         width: 46px;
         border: 2px solid #FFFFFF;
         margin-top: 15px;
         transition: all .2s;
       }
-      &_el:nth-child(1){
+
+      &_el:nth-child(1) {
         margin: 0;
       }
     }
   }
 }
-.overlay{
+
+.overlay {
   position: absolute;
   height: 100vh;
-  background: rgba(0,0,0,.9);
+  background: rgba(0, 0, 0, .9);
   z-index: 5;
   top: 100%;
   left: 0;
   right: 0;
-  &_nav{
+
+  &_nav {
     list-style-type: none;
     padding: 0;
     width: 260px;
     margin: 20px auto;
-    &_link{
+
+    &_link {
       width: 100%;
       font-size: 20px;
       font-weight: 500;
       text-align: center;
       margin-top: 20px;
-      &_a{
+
+      &_a {
         text-decoration: none;
         color: #FFFFFF;
       }
-      &_exit{
+
+      &_exit {
         text-decoration: none;
         color: $mainColor;
       }

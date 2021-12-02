@@ -1,7 +1,8 @@
-const addComment=postId=>{
-    return{
-        type:'ADD_COMMENT',
-        postId
+const addComment = (postId, userId) => {
+    return {
+        type: 'ADD_COMMENT',
+        postId,
+        userId
     }
 }
 export default addComment

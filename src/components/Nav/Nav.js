@@ -9,7 +9,7 @@ const Nav = () => {
             <hr className={styles.nav_el}/>
             <ul className={styles.nav_menu}>
                 <li className={styles.nav_menu_el}>
-                    <NavLink className={styles.nav_menu_el_link} to='/network/:id'>Мой профиль</NavLink>
+                    <NavLink className={styles.nav_menu_el_link} to='/network/100'>Мой профиль</NavLink>
                 </li>
                 <li className={styles.nav_menu_el}>
                     <NavLink className={styles.nav_menu_el_link} to='/network/users'>Все пользователи</NavLink>

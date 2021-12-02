@@ -1,4 +1,7 @@
+import avatar from './../../img/avatar.png'
+
 let initialState = {
+    auth: !!localStorage.getItem('token'),
     showNewPost: true,
     showDeletePost: '',
     inputNewPost: '',
@@ -24,8 +27,8 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.posts.forEach(post => {
                 post.showComments = false
                 post.inputComment = ''
+                post.countLikes = 0
             })
-            console.log(stateCopy.posts)
             return stateCopy
         case 'GET_COMMENTS':
             stateCopy.posts.forEach(post => {
@@ -34,6 +37,7 @@ const profileReducer = (state = initialState, action) => {
                         if (!post.comments) {
                             post.comments = []
                         }
+                        comment.countLikes = 0
                         post.comments.push(comment)
                     }
                 })
@@ -64,6 +68,7 @@ const profileReducer = (state = initialState, action) => {
                     body: stateCopy.inputNewPost,
                     showComments: false,
                     inputComment: '',
+                    countLikes: 0
                 }
                 stateCopy.posts.unshift(post)
                 stateCopy.inputNewPost = ''
@@ -83,14 +88,41 @@ const profileReducer = (state = initialState, action) => {
                         let comment = {
                             postId: post.id,
                             id: Math.floor(Math.random() * 1000),
-                            body: post.inputComment
+                            body: post.inputComment,
+                            countLikes: 0,
+                            fromUserId: action.userId,
+                            avatar: avatar,
                         }
-                        post.comments.unshift(comment)
+                        if (!post.comments) {
+                            post.comments = []
+                        }
+                        post.comments.push(comment)
                         post.inputComment = ''
                     }
 
                 }
             })
+            return stateCopy
+        case 'SET_LIKE_POST':
+            stateCopy.posts.forEach(post => {
+                if (post.id === action.id) {
+                    post.countLikes = post.countLikes + action.value
+                }
+            })
+            return stateCopy
+        case 'SET_LIKE_COMMENT':
+            stateCopy.posts.forEach((post, i) => {
+                if (post.id === action.postId) {
+                    post.comments.forEach(comment => {
+                        if (comment.id === action.commentId) {
+                            comment.countLikes = comment.countLikes + action.value
+                        }
+                    })
+                }
+            })
+            return stateCopy
+        case 'SET_AUTH':
+            stateCopy.auth = !stateCopy.auth
             return stateCopy
         default:
             return state

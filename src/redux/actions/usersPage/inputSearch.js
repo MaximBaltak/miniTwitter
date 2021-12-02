@@ -1,4 +1,4 @@
-const inputSearch=text=>{
+const inputSearch = text => {
     return {
         type: "INPUT_VALUE",
         text

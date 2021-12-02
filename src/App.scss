@@ -1,71 +1,79 @@
-$background:#3B8BEB;
-$title:#E5E5E5;
-$mainColor:#B23850;
+$background: #3B8BEB;
+$title: #E5E5E5;
+$mainColor: #B23850;
 $text: #0B4081;
-@mixin bigTablet(){
-  @media screen and (max-width: 1226px){
+@mixin bigTablet() {
+  @media screen and (max-width: 1226px) {
     @content
   }
 }
-@mixin tablet(){
-  @media screen and (max-width: 992px){
+
+@mixin tablet() {
+  @media screen and (max-width: 992px) {
     @content
   }
 }
-@mixin bigMobile(){
-  @media screen and (max-width: 768px){
+
+@mixin bigMobile() {
+  @media screen and (max-width: 768px) {
     @content
   }
 }
-@mixin mediumMobile(){
-  @media screen and (max-width: 576px){
+
+@mixin mediumMobile() {
+  @media screen and (max-width: 576px) {
     @content
   }
 }
-@mixin smallMobile(){
-  @media screen and (max-width: 354px){
+
+@mixin smallMobile() {
+  @media screen and (max-width: 354px) {
     @content
   }
 }
-@mixin container(){
+
+@mixin container() {
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
-  @include bigTablet{
-   max-width: 992px;
+  @include bigTablet {
+    max-width: 992px;
   }
-  @include tablet{
+  @include tablet {
     max-width: 850px;
   }
-  @include bigMobile{
+  @include bigMobile {
     max-width: none;
     padding: 0;
   }
 
 }
-.grid{
+
+.grid {
   @include container;
   display: grid;
   height: 817px;
   grid-template-areas: "nav content";
   grid-gap: 30px;
   margin-top: 50px;
-  @include bigMobile{
+  @include bigMobile {
     display: block;
     width: 100%;
     margin: 0 auto;
   }
-  &_nav{
+
+  &_nav {
     grid-area: nav;
   }
-  &_content{
+
+  &_content {
     grid-area: content;
     width: 825px;
     height: 100%;
     overflow: hidden;
     background: #FFFFFF;
     box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.25);
-    @include bigTablet(){
+    @include bigTablet() {
       width: 100%;
     }
   }

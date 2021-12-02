@@ -1,5 +1,6 @@
 @import "./../../../App";
-.button{
+
+.button {
   display: block;
   width: 131px;
   height: 40px;
@@ -12,7 +13,8 @@
   color: $mainColor;
   transition: all .2s;
   margin-top: 20px;
-  &:hover{
+
+  &:hover {
     background: $mainColor;
     color: #FFFFFF;
   }
