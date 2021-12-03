@@ -1,17 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './AllPosts.module.scss'
 import OnePost from "./OnePost/OnePost";
-const AllPosts = () => {
+import {useDispatch} from "react-redux";
+import actions from "../../redux/actions/action";
+
+const AllPosts = ({posts, showComments, changeNewComment, addNewComment, setPostLike, setCommentLike}) => {
+    let dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(actions.getPostsAll())
+    }, [])
     return (
         <main className={styles.content}>
             <ul className={styles.content_posts}>
-                <li className={styles.content_posts_post}><OnePost/></li>
-                <li className={styles.content_posts_post}><OnePost/></li>
-                <li className={styles.content_posts_post}><OnePost/></li>
-                <li className={styles.content_posts_post}><OnePost/></li>
-                <li className={styles.content_posts_post}><OnePost/></li>
-                <li className={styles.content_posts_post}><OnePost/></li>
-
+                {posts.map(post => <li key={post.id} className={styles.content_posts_post}>
+                    <OnePost post={post}
+                             showComment={showComments}
+                             changeNewComment={changeNewComment}
+                             addNewComment={addNewComment}
+                             setCommentLike={setCommentLike}
+                             setPostLike={setPostLike}/>
+                </li>)}
             </ul>
         </main>
     );

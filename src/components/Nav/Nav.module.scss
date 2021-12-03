@@ -42,12 +42,15 @@
 
     &_exit {
       display: block;
-      margin-top: 100px;
+      margin: 100px auto;
       text-align: center;
       font-weight: 500;
       font-size: 20px;
       color: $mainColor;
       text-decoration: none;
+      background: none;
+      border: none;
+      outline: none;
     }
   }
 }

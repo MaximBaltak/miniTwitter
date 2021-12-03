@@ -1,8 +1,17 @@
 import React from 'react';
 import styles from './Nav.module.scss'
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import actions from "../../redux/actions/action";
 
 const Nav = () => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const exit = () => {
+        localStorage.removeItem('token')
+        dispatch(actions.setAuth())
+        navigate('/')
+    }
     return (
         <nav className={styles.nav}>
             <h2 className={styles.nav_title}>Меню</h2>
@@ -18,7 +27,7 @@ const Nav = () => {
                     <NavLink className={styles.nav_menu_el_link} to='/network/posts'>Все посты</NavLink>
                 </li>
             </ul>
-            <NavLink className={styles.nav_menu_exit} to='/'>Выйти</NavLink>
+            <button onClick={exit} className={styles.nav_menu_exit}>Выйти</button>
         </nav>
     );
 };

@@ -1,28 +1,32 @@
 @import "./../../../App";
-.container{
+
+.container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  @include bigMobile{
+  @include bigMobile {
     border-bottom: solid 1px $mainColor;
     padding-bottom: 10px;
   }
-  &_avatar{
+
+  &_avatar {
     display: block;
     width: 56px;
     height: 56px;
-    @include tablet{
+    border-radius: 100%;
+    @include tablet {
       width: 45px;
       height: 45px;
     }
-    @include bigMobile{
+    @include bigMobile {
       width: 56px;
       height: 56px;
     }
 
   }
-  &_text{
+
+  &_text {
     margin: 0;
     width: 277px;
     font-weight: normal;
@@ -30,11 +34,11 @@
     line-height: 20px;
     word-wrap: break-word;
     color: $text;
-    @include tablet{
+    @include tablet {
       font-size: 16px;
       width: 250px;
     }
-    @include bigMobile{
+    @include bigMobile {
       font-size: 18px;
       flex-grow: 1;
       width: 100%;
@@ -42,41 +46,83 @@
 
     }
   }
-  &_buttons{
+
+  &_buttons {
     display: flex;
     width: 27px;
     justify-content: space-between;
     align-items: center;
-    &_wrapper{
-      &_like{
+
+    &_wrapper {
+      transition: all .2s;
+      cursor: pointer;
+
+      &_like {
         width: 21px;
         height: 21px;
       }
-      &_count{
+
+      &_count {
         text-align: center;
         margin: -12px 0 0;
       }
+
+      &:active {
+        transform: scale(1.2);
+      }
     }
-    &_button{
+
+    &_button {
+      transition: all .2s;
+      cursor: pointer;
       width: 27px;
       height: 27px;
       opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.2);
+      }
     }
   }
 }
+
 .wrapper {
   margin-top: 10px;
   margin-left: 60px;
   display: block;
-  @include bigMobile{
+  position: relative;
+  @include bigMobile {
     margin: 10px auto;
   }
+
   &_commentsButton {
     width: 27px;
     height: 27px;
     opacity: 0.5;
-    @include mediumMobile{
+    @include mediumMobile {
       margin-left: 60px;
+    }
+  }
+
+  &_countComments {
+    position: absolute;
+    margin: 0;
+    top: -4px;
+    left: 30px;
+    font-weight: normal;
+    font-size: 20px;
+    color: black;
+    @include mediumMobile {
+      left: 94px;
+    }
+
+    &_write {
+      margin: 0 auto;
+      color: $background;
+      font-size: 16px;
+      font-weight: normal;
+      cursor: pointer;
     }
   }
 }

@@ -1,42 +1,48 @@
 @import "./../../../../App";
-.comments{
+
+.comments {
   list-style-type: none;
-  margin-top: 17px ;
+  margin-top: 17px;
   padding: 0;
-  &_comment{
+
+  &_comment {
     margin-top: 17px;
     width: 293px;
-    @include bigMobile{
+    @include bigMobile {
       margin: 10px auto;
     }
-    @include smallMobile{
+    @include smallMobile {
       width: 100%;
     }
   }
 }
-.container{
-  margin-top: 17px ;
+
+.container {
+  margin-top: 17px;
   display: flex;
   width: 292px;
   justify-content: space-between;
   align-items: flex-start;
-  @include bigMobile{
+  @include bigMobile {
     width: 100%;
+    justify-content: center;
     margin-left: 0;
   }
-  @include smallMobile{
+  @include smallMobile {
     justify-content: center;
   }
-  &_avatar{
+
+  &_avatar {
     display: block;
     width: 31px;
     height: 31px;
-    @include smallMobile{
+    @include smallMobile {
       margin-right: 20px;
     }
   }
-  &_wrapper{
-    &_input{
+
+  &_wrapper {
+    &_input {
       width: 273px;
       height: 37px;
       outline: none;
@@ -47,10 +53,11 @@
       color: $text;
       font-size: 13px;
       font-weight: normal;
-      @include smallMobile{
+      @include smallMobile {
         width: 100%;
       }
-      &::placeholder{
+
+      &::placeholder {
         font-weight: normal;
         font-size: 13px;
         color: #BBB9B9;

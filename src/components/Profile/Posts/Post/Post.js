@@ -62,7 +62,7 @@ const Post = ({
                     :
                     <div>
                         <svg onClick={() => showComments(post.id)} className={styles.wrapper_commentsButton}>*/
-                            <use xlinkHref={`${icons}#comments`}/>*/
+                            <use xlinkHref={`${icons}#comments`}/>
                         </svg>
                         <p className={styles.wrapper_countComments}>{post?.comments?.length}</p>
                     </div>

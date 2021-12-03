@@ -15,6 +15,12 @@ import inputNewPost from "./profilePage/inputNewPost";
 import setLikePost from "./profilePage/setLikePost";
 import setLikeComment from "./profilePage/setLikeComment";
 import setAuth from "./profilePage/setAuth";
+import addCommentAll from "./postsPage/addCommentAll";
+import getPostsAll from "./postsPage/getPostsAll";
+import inputCommentAll from "./postsPage/inputCommentAll";
+import setLikeCommentsAll from "./postsPage/setLikeCommentsAll";
+import setLikePostsAll from "./postsPage/setLikePostsAll";
+import showCommentsAll from "./postsPage/showCommentsAll";
 
 const actions = {
     getUsers,
@@ -34,5 +40,11 @@ const actions = {
     setLikePost,
     setLikeComment,
     setAuth,
+    addCommentAll,
+    getPostsAll,
+    inputCommentAll,
+    setLikeCommentsAll,
+    setLikePostsAll,
+    showCommentsAll
 }
 export default actions

@@ -1,27 +1,50 @@
 import React from 'react';
 import styles from './OnePost.module.scss'
-import avatar from '../../../img/avatar.png'
 import icons from '../../../img/icons.svg'
 import Comments from "./Comments/Comments";
 
-const OnePost = () => {
+const OnePost = ({post, showComment, setPostLike, changeNewComment, addNewComment, setCommentLike}) => {
     return (
         <>
             <div className={styles.container}>
-                <img className={styles.container_avatar} src={avatar} alt="avatar" title='Александр Попов'/>
-                <p className={styles.container_text}>Сегодня я закончил учёбу и получил диплом Frontend-разработчика,
-                    теперь можно есть печеньки </p>
+                <img className={styles.container_avatar} src={post.avatar} alt="avatar" title='Александр Попов'/>
+                <p className={styles.container_text}>{post.body}</p>
                 <div className={styles.container_buttons}>
-                    <svg className={styles.container_buttons_button}>
-                        <use xlinkHref={`${icons}#like`}/>
-                    </svg>
+                    {post.countLikes === 0 ?
+                        <div className={styles.container_buttons_wrapper}>
+                            <svg onClick={() => setPostLike(post.id, 1)}
+                                 className={styles.container_buttons_wrapper_like}>
+                                <use xlinkHref={`${icons}#like`}/>
+                            </svg>
+                        </div> :
+                        <div className={styles.container_buttons_wrapper}>
+                            <svg onClick={() => setPostLike(post.id, -1)}
+                                 className={styles.container_buttons_wrapper_like}>
+                                <use xlinkHref={`${icons}#like-active`}/>
+                            </svg>
+                            <p className={styles.container_buttons_wrapper_count}>{post.countLikes}</p>
+                        </div>
+                    }
                 </div>
             </div>
             <div className={styles.wrapper}>
-                {/*<svg className={styles.wrapper_commentsButton}>*/}
-                {/*    <use xlinkHref={`${icons}#comments`}/>*/}
-                {/*</svg>*/}
-                <Comments/>
+                {post.showComments ?
+                    <div>
+                        <p className={styles.wrapper_countComments_write}
+                           onClick={() => showComment(post.id)}>Скрыть все</p>
+                        <Comments setCommentLike={setCommentLike}
+                                  post={post}
+                                  changeNewComment={changeNewComment}
+                                  addNewComment={addNewComment}/>
+                    </div>
+                    :
+                    <div>
+                        <svg onClick={() => showComment(post.id)} className={styles.wrapper_commentsButton}>*/
+                            <use xlinkHref={`${icons}#comments`}/>
+                        </svg>
+                        <p className={styles.wrapper_countComments}>{post?.comments?.length}</p>
+                    </div>
+                }
             </div>
         </>
     );

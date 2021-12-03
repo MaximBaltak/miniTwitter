@@ -2,9 +2,9 @@ import React from 'react';
 import './../../App.scss'
 import Nav from "../Nav/Nav";
 import {Route, Routes} from "react-router-dom";
-import AllPosts from "../AllPosts/AllPosts";
 import UsersContainer from "../Users/UsersContainer";
 import ProfileContainer from "../Profile/ProfileContainer";
+import AllPostsContainer from "../AllPosts/AllPostsContainer";
 
 const Content = () => {
     return (
@@ -16,7 +16,7 @@ const Content = () => {
                 <Routes>
                     <Route exact path='/:id' element={<ProfileContainer/>}/>
                     <Route exact path='/users' element={<UsersContainer/>}/>
-                    <Route exact path='/posts' element={<AllPosts/>}/>
+                    <Route exact path='/posts' element={<AllPostsContainer/>}/>
                 </Routes>
             </div>
         </div>
