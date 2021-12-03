@@ -6,6 +6,7 @@ import UsersContainer from "../Users/UsersContainer";
 import ProfileContainer from "../Profile/ProfileContainer";
 import AllPostsContainer from "../AllPosts/AllPostsContainer";
 
+
 const Content = () => {
     return (
         <div className='grid'>
@@ -13,7 +14,7 @@ const Content = () => {
                 <Nav/>
             </div>
             <div className='grid_content'>
-                <Routes>
+                <Routes >
                     <Route exact path='/:id' element={<ProfileContainer/>}/>
                     <Route exact path='/users' element={<UsersContainer/>}/>
                     <Route exact path='/posts' element={<AllPostsContainer/>}/>

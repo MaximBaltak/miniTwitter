@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './Header.module.scss'
 import logo from '../../img/logo.png'
-import {NavLink, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import actions from "../../redux/actions/action";
 
@@ -14,6 +14,10 @@ const Header = () => {
         setActiveHamburger(prev => !prev)
         dispatch(actions.setAuth())
         navigate('/')
+    }
+    const click = (path) => {
+        setActiveHamburger(prev => !prev)
+        navigate(path)
     }
     const toggleHamburger = () => {
         if (localStorage.getItem('token')) {
@@ -37,13 +41,19 @@ const Header = () => {
             {activeHamburger ? <div className={styles.overlay}>
                 <ul className={styles.overlay_nav}>
                     <li className={styles.overlay_nav_link}>
-                        <NavLink className={styles.overlay_nav_link_a} to='/network/100'>Мой профиль</NavLink>
+                        <button onClick={() => click('/network/100')} className={styles.overlay_nav_link_a}>Мой
+                            профиль
+                        </button>
                     </li>
                     <li className={styles.overlay_nav_link}>
-                        <NavLink className={styles.overlay_nav_link_a} to='/network/users'>Все пользователи</NavLink>
+                        <button onClick={() => click('/network/users')} className={styles.overlay_nav_link_a}>Все
+                            пользователи
+                        </button>
                     </li>
                     <li className={styles.overlay_nav_link}>
-                        <NavLink className={styles.overlay_nav_link_a} to='/network/posts'>Все посты</NavLink>
+                        <button onClick={() => click('/network/posts')} className={styles.overlay_nav_link_a}>Все
+                            посты
+                        </button>
                     </li>
                     <li className={styles.overlay_nav_link}>
                         <button onClick={exit}

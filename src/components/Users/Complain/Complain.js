@@ -8,6 +8,11 @@ const Complain = ({modal, toggleModal, inputComplain, submitComplain}) => {
             toggleModal()
         }
     }
+    const onEnter=e=>{
+        if(e.code==='Enter'&&e.altKey){
+            submitComplain()
+        }
+    }
     return (
         <div id='overlay' onClick={watchClick} className={styles.overlay}>
             <div className={styles.window}>
@@ -18,6 +23,7 @@ const Complain = ({modal, toggleModal, inputComplain, submitComplain}) => {
                     {modal.error ? <p style={{color: 'red', fontSize: '20px'}}>Поле не заполнено</p> : null}
                     <textarea value={modal.inputComplain}
                               onChange={e => inputComplain(e.target.value)}
+                              onKeyUp={onEnter}
                               className={styles.window_input}
                               placeholder='Сообщение'/>
                     <Button click={submitComplain}

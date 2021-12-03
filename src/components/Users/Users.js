@@ -11,6 +11,7 @@ const Users = ({users, value, inputValue, inputModal, submitModal, search, modal
     useEffect(() => {
         dispatch(actions.getUsers())
     }, [])
+
     return (
         <main className={styles.content}>
             <div className={styles.content_search}>
@@ -27,7 +28,7 @@ const Users = ({users, value, inputValue, inputModal, submitModal, search, modal
             <ul className={styles.content_users}>
                 {
                     users.map(user =>
-                        <li key={user.id} className={styles.content_users_el}>
+                        <li  key={user.id} className={styles.content_users_el}>
                             <User posts={user.p} toggleModal={toggleModal} id={user.id} avatar={user.avatar}
                                   name={user.name}/></li>
                     )
