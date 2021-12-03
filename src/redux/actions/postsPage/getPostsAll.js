@@ -2,6 +2,7 @@ import axios from "axios";
 
 const getPostsAll = () => {
     return async dispatch => {
+        dispatch({type: 'LOADER'})
         let {data: posts} = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
         let {data: comments} = await axios.get(`https://jsonplaceholder.typicode.com/comments`)
         let {data: photos} = await axios.get(`https://jsonplaceholder.typicode.com/photos`)
@@ -25,6 +26,7 @@ const getPostsAll = () => {
 
         })
         dispatch({type: 'GET_POSTS_ALL', data})
+        dispatch({type: 'LOADER'})
     }
 }
 export default getPostsAll

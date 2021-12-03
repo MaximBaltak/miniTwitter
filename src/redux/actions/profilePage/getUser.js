@@ -3,6 +3,7 @@ import icon from './../../../img/avatar.png'
 
 const getUser = id => {
     return async dispatch => {
+        dispatch({type: 'LOADER'})
         if (id === '100') {
             let user = {
                 id: 100,
@@ -33,9 +34,9 @@ const getUser = id => {
             let {data: posts} = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
 
             dispatch({type: 'GET_USER', user, posts})
+
         }
-
-
+        dispatch({type: 'LOADER'})
     }
 }
 export default getUser

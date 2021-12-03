@@ -2,6 +2,7 @@ import axios from "axios";
 
 const getComments = postId => {
     return dispatch => {
+        dispatch({type: 'LOADER'})
         if (postId === '9872') {
             let data = {
                 postId: 9872,
@@ -13,6 +14,7 @@ const getComments = postId => {
             axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
                 .then(({data}) => dispatch({type: "GET_COMMENTS", data, postId}))
         }
+        dispatch({type: 'LOADER'})
     }
 }
 export default getComments

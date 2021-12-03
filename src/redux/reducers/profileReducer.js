@@ -1,6 +1,7 @@
 import avatar from './../../img/avatar.png'
 
 let initialState = {
+    loader:false,
     auth: !!localStorage.getItem('token'),
     showNewPost: true,
     showDeletePost: '',
@@ -123,6 +124,9 @@ const profileReducer = (state = initialState, action) => {
             return stateCopy
         case 'SET_AUTH':
             stateCopy.auth = !stateCopy.auth
+            return stateCopy
+        case 'LOADER':
+            stateCopy.loader=!stateCopy.loader
             return stateCopy
         default:
             return state
