@@ -7,7 +7,7 @@ const OnePost = ({post, showComment, setPostLike, changeNewComment, addNewCommen
     return (
         <>
             <div className={styles.container}>
-                <img className={styles.container_avatar} src={post.avatar} alt="avatar" title='Александр Попов'/>
+                <img className={styles.container_avatar} src={post.avatar} alt="avatar" />
                 <p className={styles.container_text}>{post.body}</p>
                 <div className={styles.container_buttons}>
                     {post.countLikes === 0 ?
