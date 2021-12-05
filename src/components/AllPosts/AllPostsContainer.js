@@ -5,6 +5,7 @@ import AllPosts from "./AllPosts";
 const mapStateToProps = state => {
     return {
         posts: state.postsPage.posts,
+        errorGetPosts: state.postsPage.errorGetPosts
     }
 }
 const mapDispatchToProps = dispatch => {

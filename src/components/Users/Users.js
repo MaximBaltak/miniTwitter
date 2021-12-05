@@ -6,7 +6,18 @@ import {useDispatch} from "react-redux";
 import actions from "../../redux/actions/action";
 import Complain from "./Complain/Complain";
 
-const Users = ({users, value, inputValue, inputModal, submitModal, search, modal, showModal, toggleModal}) => {
+const Users = ({
+                   errorGetUsers,
+                   users,
+                   value,
+                   inputValue,
+                   inputModal,
+                   submitModal,
+                   search,
+                   modal,
+                   showModal,
+                   toggleModal
+               }) => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.getUsers())
@@ -14,27 +25,34 @@ const Users = ({users, value, inputValue, inputModal, submitModal, search, modal
 
     return (
         <main className={styles.content}>
-            <div className={styles.content_search}>
-                <input value={value}
-                       onChange={e => inputValue(e.target.value)}
-                       className={styles.content_search_input}
-                       type="text" placeholder='Кого ищем?'/>
-                <button onClick={search} className={styles.content_search_button}>
-                    <svg className={styles.content_search_button_svg}>
-                        <use xlinkHref={`${icons}#search`}/>
-                    </svg>
-                </button>
-            </div>
-            <ul className={styles.content_users}>
-                {
-                    users.map(user =>
-                        <li  key={user.id} className={styles.content_users_el}>
-                            <User posts={user.p} toggleModal={toggleModal} id={user.id} avatar={user.avatar}
-                                  name={user.name}/></li>
-                    )
-                }
-
-            </ul>
+            {
+                errorGetUsers ? <div className={styles.content_errorWrapper}>
+                        <p className={styles.content_errorWrapper_error}>Упс! Что-то пошло не так</p>
+                        <p className={styles.content_errorWrapper_text}>Попробуйте позднее</p>
+                    </div> :
+                    <div>
+                        <div className={styles.content_search}>
+                            <input value={value}
+                                   onChange={e => inputValue(e.target.value)}
+                                   className={styles.content_search_input}
+                                   type="text" placeholder='Кого ищем?'/>
+                            <button onClick={search} className={styles.content_search_button}>
+                                <svg className={styles.content_search_button_svg}>
+                                    <use xlinkHref={`${icons}#search`}/>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul className={styles.content_users}>
+                            {
+                                users.map(user =>
+                                    <li key={user.id} className={styles.content_users_el}>
+                                        <User posts={user.p} toggleModal={toggleModal} id={user.id} avatar={user.avatar}
+                                              name={user.name}/></li>
+                                )
+                            }
+                        </ul>
+                    </div>
+            }
             {showModal ? <Complain inputComplain={inputModal}
                                    submitComplain={submitModal}
                                    toggleModal={toggleModal}

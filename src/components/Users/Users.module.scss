@@ -9,6 +9,23 @@
     width: 0;
   }
 
+  &_errorWrapper {
+    margin: 100px auto;
+    width: 400px;
+
+    &_error {
+      font-size: 40px;
+      color: gray;
+      font-weight: 900;
+    }
+
+    &_text {
+      font-size: 25px;
+      color: black;
+      font-weight: 500;
+    }
+  }
+
   &_search {
     position: relative;
     width: 379px;

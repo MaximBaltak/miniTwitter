@@ -1,7 +1,7 @@
 import avatar from './../../img/avatar.png'
 
 let initialState = {
-    loader:false,
+    loader: false,
     auth: !!localStorage.getItem('token'),
     showNewPost: true,
     showDeletePost: '',
@@ -13,7 +13,9 @@ let initialState = {
         email: '',
         tele: '',
     },
-    posts: []
+    posts: [],
+    errorGetUser: false,
+    errorGetComments: false
 }
 const profileReducer = (state = initialState, action) => {
     let stateCopy = {
@@ -31,6 +33,9 @@ const profileReducer = (state = initialState, action) => {
                 post.countLikes = 0
             })
             return stateCopy
+        case 'GET_USER_ERROR':
+            stateCopy.errorGetUser = action.error
+            return stateCopy
         case 'GET_COMMENTS':
             stateCopy.posts.forEach(post => {
                 action.data.forEach(comment => {
@@ -43,6 +48,9 @@ const profileReducer = (state = initialState, action) => {
                     }
                 })
             })
+            return stateCopy
+        case 'GET_COMMENTS_ERROR':
+            stateCopy.errorGetComments = action.error
             return stateCopy
         case 'TOGGLE_COMMENTS':
             stateCopy.posts.forEach(post => {
@@ -72,6 +80,7 @@ const profileReducer = (state = initialState, action) => {
                     countLikes: 0
                 }
                 stateCopy.posts.unshift(post)
+                console.log(398)
                 stateCopy.inputNewPost = ''
             }
             return stateCopy
@@ -126,7 +135,7 @@ const profileReducer = (state = initialState, action) => {
             stateCopy.auth = !stateCopy.auth
             return stateCopy
         case 'LOADER':
-            stateCopy.loader=!stateCopy.loader
+            stateCopy.loader = !stateCopy.loader
             return stateCopy
         default:
             return state

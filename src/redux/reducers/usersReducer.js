@@ -8,7 +8,8 @@ const initialState = {
         to: '',
         error: false,
         inputComplain: ''
-    }
+    },
+    errorGetUsers: false
 }
 const usersReducer = (state = initialState, action) => {
     let stateCopy = {
@@ -19,6 +20,9 @@ const usersReducer = (state = initialState, action) => {
         case 'GET_USERS':
             stateCopy.users = [...action.users]
             stateCopy.filterUsers = [...action.users]
+            return stateCopy
+        case 'GET_USERS_ERROR':
+            stateCopy.errorGetUsers = action.error
             return stateCopy
         case 'INPUT_VALUE':
             stateCopy.inputSearch = action.text

@@ -1,15 +1,35 @@
 @import "./../../App";
-.content{
+
+.content {
   position: relative;
   height: 100%;
   padding: 51px;
-  @include tablet{
+  @include tablet {
     padding: 10px;
   }
-  &::-webkit-scrollbar{
+
+  &::-webkit-scrollbar {
     width: 0;
   }
-  &_posts{
+
+  &_errorWrapper {
+    margin: 100px auto;
+    width: 400px;
+
+    &_error {
+      font-size: 40px;
+      color: gray;
+      font-weight: 900;
+    }
+
+    &_text {
+      font-size: 25px;
+      color: black;
+      font-weight: 500;
+    }
+  }
+
+  &_posts {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -18,10 +38,11 @@
     list-style-type: none;
     width: 491px;
     margin: 0 auto;
-    @include tablet{
+    @include tablet {
       width: 100%;
     }
-    &_post{
+
+    &_post {
       margin-top: 27px;
       width: 87%;
     }

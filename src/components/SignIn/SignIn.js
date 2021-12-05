@@ -9,8 +9,8 @@ const SignIn = () => {
     const navigate = useNavigate()
     const login = () => {
         localStorage.setItem('token', '8020')
-        navigate('/network/100')
         dispatch(actions.setAuth())
+        navigate('/network/100')
     }
     return (
         <div className={styles.content}>

@@ -74,15 +74,18 @@ $text: #0B4081;
     overflow-y: auto;
     background: #FFFFFF;
     box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.25);
-    &::-webkit-scrollbar{
+
+    &::-webkit-scrollbar {
       width: 0;
     }
+
     @include bigTablet() {
       width: 100%;
     }
   }
 }
-.container-loader{
+
+.container-loader {
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -92,8 +95,9 @@ $text: #0B4081;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255,255,255, 0.6);
-  &_loader{
+  background: rgba(255, 255, 255, 0.6);
+
+  &_loader {
     display: block;
     width: 160px;
     height: 160px;

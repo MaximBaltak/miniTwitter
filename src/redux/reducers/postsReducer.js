@@ -1,7 +1,8 @@
 import avatar from "../../img/avatar.png";
 
 const initialState = {
-    posts: []
+    posts: [],
+    errorGetPosts: false
 }
 const postsReducer = (state = initialState, action) => {
     let stateCopy = {
@@ -11,6 +12,9 @@ const postsReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'GET_POSTS_ALL':
             stateCopy.posts = [...action.data]
+            return stateCopy
+        case 'GET_POSTS_ALL_ERROR':
+            stateCopy.errorGetPosts = action.error
             return stateCopy
         case 'ADD_COMMENT_POSTS_PAGE':
             stateCopy.posts.forEach(post => {

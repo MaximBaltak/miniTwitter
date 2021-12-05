@@ -6,7 +6,9 @@ const mapStateToProps = state => {
     return {
         user: state.profilePage.user,
         posts: state.profilePage.posts,
-        textNewPost: state.profilePage.inputNewPost,
+        errorGetUser: state.profilePage.errorGetUser,
+        errorGetComments: state.profilePage.errorGetComments,
+        textNewPost: state.profilePage.inputNewPost
     }
 }
 const mapDispatchToProps = dispatch => {

@@ -8,6 +8,7 @@ const mapStateToProps = state => {
         value: state.usersPage.inputValue,
         modal: state.usersPage.modal,
         showModal: state.usersPage.showModal,
+        errorGetUsers: state.usersPage.errorGetUsers,
     }
 }
 const mapDispatchToProps = dispatch => {
