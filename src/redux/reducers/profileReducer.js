@@ -80,7 +80,6 @@ const profileReducer = (state = initialState, action) => {
                     countLikes: 0
                 }
                 stateCopy.posts.unshift(post)
-                console.log(398)
                 stateCopy.inputNewPost = ''
             }
             return stateCopy
