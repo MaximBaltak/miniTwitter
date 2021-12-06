@@ -17,7 +17,7 @@ const AllPosts = ({
     let dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.getPostsAll())
-    }, [])
+    }, [dispatch])
     let animations = useTransition(posts, {
         from: {
             opacity: 0,

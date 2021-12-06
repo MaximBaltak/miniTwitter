@@ -21,8 +21,12 @@ const Users = ({
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.getUsers())
-    }, [])
-
+    }, [dispatch])
+    const onEnter=e=>{
+        if(e.code==='Enter'&&e.altKey){
+            search()
+        }
+    }
     return (
         <main className={styles.content}>
             {
@@ -35,6 +39,7 @@ const Users = ({
                             <input value={value}
                                    onChange={e => inputValue(e.target.value)}
                                    className={styles.content_search_input}
+                                   onKeyUp={onEnter}
                                    type="text" placeholder='Кого ищем?'/>
                             <button onClick={search} className={styles.content_search_button}>
                                 <svg className={styles.content_search_button_svg}>
@@ -44,11 +49,11 @@ const Users = ({
                         </div>
                         <ul className={styles.content_users}>
                             {
-                                users.map(user =>
+                                users.length>0 ? users.map(user =>
                                     <li key={user.id} className={styles.content_users_el}>
                                         <User posts={user.p} toggleModal={toggleModal} id={user.id} avatar={user.avatar}
                                               name={user.name}/></li>
-                                )
+                                ) : <p className={styles.content_errorWrapper_error}>Ни чего не найдено</p>
                             }
                         </ul>
                     </div>

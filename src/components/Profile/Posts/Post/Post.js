@@ -17,10 +17,10 @@ const Post = ({
                   setLikeComment
               }) => {
     const params = useParams()
-    let dispatch = useDispatch()
+    const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.getComments(post.id))
-    }, [])
+    }, [dispatch,post])
     return (
         <>
             <div className={styles.container}>

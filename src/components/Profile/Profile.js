@@ -27,7 +27,7 @@ const Profile = ({
     let dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.getUser(params.id))
-    }, [params.id])
+    }, [dispatch,params.id])
     let [showInfo, setShowInfo] = useState(false)
     let [fullscreen, setfullscreen] = useState(false)
     let animation = useTransition(fullscreen, {
