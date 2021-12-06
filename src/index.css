@@ -10,8 +10,10 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Vollkorn', serif;
-    background: #E5EAF6;
-    position: relative;
+    background-blend-mode: screen;
+    background: linear-gradient(21deg, rgba(255, 5, 5, 0.29), rgba(3, 101, 224, 0.2));
+
+position: relative;
 }
 
 

@@ -51,11 +51,13 @@ $text: #0B4081;
 
 .grid {
   @include container;
+  position: relative;
   display: grid;
   height: 817px;
   grid-template-areas: "nav content";
   grid-gap: 30px;
   margin-top: 50px;
+  z-index: 2;
   @include bigMobile {
     display: block;
     width: 100%;
@@ -103,4 +105,202 @@ $text: #0B4081;
     height: 160px;
   }
 }
+.element{
+  position: fixed;
+  width: 1000px;
+  height: 1px;
+  background: $background;
+  animation: oneElement 12s infinite alternate;
+  left: 22%;
+  top:50%;
+  z-index: 1;
+  opacity: 0.3;
+  @include mediumMobile{
+    left: 0;
+  }
 
+}
+.twoElement{
+  animation: twoElement 20s infinite alternate ease-in-out;
+  background: $mainColor;
+}
+.threeElement{
+  animation: threeElement 20s infinite alternate ease-in;
+  background: black;
+}
+.fourElement{
+  animation: fourElement 20s infinite alternate ease-in-out;
+  background: $text;
+}
+.fiveElement{
+  animation: fiveElement 20s infinite alternate ease-in-out;
+  background: $mainColor;
+}
+.sixElement{
+  animation: sixElement 20s infinite alternate ease-in-out;
+  background: black;
+}
+.sevenElement{
+  animation: sevenElement 20s infinite alternate ease-in-out;
+}
+@keyframes oneElement {
+  0%{
+
+    transform: rotate(45deg) ;
+    width: 500px;
+    left: 1%;
+    top: 70%;
+  }
+  50%{
+
+    width: 500px;
+    transform: rotate(100deg) ;
+    left: 78%;
+    top: 70%;
+  }
+  100%{
+
+    width: 500px;
+    transform: rotate(62deg) ;
+    left: 45%;
+    top: 80%;
+  }
+}
+@keyframes twoElement {
+  0%{
+
+    transform: rotate(1deg);
+    width: 700px;
+    left: 10%;
+    top: 20%;
+  }
+  50%{
+
+    width: 700px;
+    transform: rotate(200deg);
+    left: 25%;
+    top: 38%;
+  }
+  100%{
+
+    width: 700px;
+    transform: rotate(360deg);
+    left: 10%;
+    top: 21%;
+  }
+}
+@keyframes threeElement {
+  0%{
+
+    transform: rotate(432deg);
+    width: 400px;
+    left: 90%;
+    top: 70%;
+  }
+  50%{
+
+    width: 400px;
+    transform: rotate(-232deg);
+    left: 60%;
+    top: 50%;
+  }
+  100%{
+
+    width: 400px;
+    transform: rotate(10deg);
+    left: 20%;
+    top: 50%;
+  }
+}
+@keyframes fourElement {
+  0%{
+
+    transform: rotate(0deg);
+    width: 900px;
+    left: 78%;
+    top: 65%;
+  }
+  50%{
+
+    width: 900px;
+    transform: rotate(800deg);
+    left: 10%;
+    top: 12%;
+  }
+  100%{
+
+    width: 900px;
+    transform: rotate(-20deg);
+    left: 50%;
+    top: 23%;
+  }
+}
+@keyframes fiveElement {
+  0%{
+
+    transform: rotate(36deg);
+    width: 800px;
+    right: 78%;
+    top: 65%;
+  }
+  50%{
+
+    width: 800px;
+    transform: rotate(60deg);
+    right: 10%;
+    top: 12%;
+  }
+  100%{
+
+    width: 800px;
+    transform: rotate(100deg);
+    right: 50%;
+    top: 23%;
+  }
+}
+@keyframes sixElement {
+  0%{
+
+    transform: rotate(98deg);
+    width: 750px;
+   right: 78%;
+    top: 65%;
+  }
+  50%{
+
+    width: 750px;
+    transform: rotate(270deg);
+    right: 65%;
+    top: 67%;
+  }
+  100%{
+
+    width: 750px;
+    transform: rotate(360deg);
+    right: 80%;
+    top: 48%;
+  }
+}
+@keyframes sevenElement {
+  0%{
+
+    transform: rotate(-20deg);
+    width: 750px;
+    left: 0;
+    top: 100%;
+  }
+  50%{
+
+    width: 750px;
+    transform: rotate(-10deg);
+    left: 45%;
+    top: 50%;
+  }
+  100%{
+
+    width: 750px;
+    transform: rotate(0deg);
+    left: 0;
+    top: 10%;
+  }
+}

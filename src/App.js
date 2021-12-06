@@ -1,4 +1,4 @@
-import './App.scss';
+import './App';
 import Header from "./components/Header/Header";
 import NotFound from "./components/NotFound/NotFound";
 import SignIn from "./components/SignIn/SignIn";
@@ -23,6 +23,13 @@ function App() {
             {load?<div className='container-loader'>
                 <img className='container-loader_loader' src={loader} alt="загрузка..."/>
             </div>:null}
+            <div className='element '/>
+            <div className='element twoElement'/>
+            <div className='element threeElement'/>
+            <div className='element fourElement'/>
+            <div className='element fiveElement'/>
+            <div className='element sixElement'/>
+            <div className='element sevenElement'/>
         </>
     );
 }

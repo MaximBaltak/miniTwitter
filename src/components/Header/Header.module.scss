@@ -1,8 +1,10 @@
 @import "./../../App";
 
 .header {
+  position: relative;
   height: 80px;
   background: $background;
+  z-index: 2;
   @include bigMobile {
     position: sticky;
     z-index: 5;
