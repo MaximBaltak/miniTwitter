@@ -30,7 +30,9 @@
     &_errorWrapper {
       margin: 100px auto;
       width: 400px;
-
+      @include mediumMobile{
+        width: 100%;
+      }
       &_error {
         font-size: 40px;
         color: gray;

@@ -35,7 +35,7 @@ const Post = ({
                             </svg>
                         </div> :
                         <div className={styles.container_buttons_wrapper}>
-                            <svg onClick={() => setLikePost(post.id, -1)}
+                            <svg onClick={() => setLikePost(post.id, -1) }
                                  className={styles.container_buttons_wrapper_like}>
                                 <use xlinkHref={`${icons}#like-active`}/>
                             </svg>
