@@ -14,7 +14,7 @@ import inputComment from "./profilePage/inputComment";
 import inputNewPost from "./profilePage/inputNewPost";
 import setLikePost from "./profilePage/setLikePost";
 import setLikeComment from "./profilePage/setLikeComment";
-import setAuth from "./profilePage/setAuth";
+import setAuth from "./titlePage/setAuth";
 import addCommentAll from "./postsPage/addCommentAll";
 import getPostsAll from "./postsPage/getPostsAll";
 import inputCommentAll from "./postsPage/inputCommentAll";

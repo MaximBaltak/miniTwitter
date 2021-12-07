@@ -12,6 +12,7 @@ const Header = () => {
     let [activeHamburger, setActiveHamburger] = useState(false)
     const exit = () => {
         localStorage.removeItem('token')
+        localStorage.removeItem('path')
         setActiveHamburger(prev => !prev)
         dispatch(actions.setAuth())
         navigate('/')

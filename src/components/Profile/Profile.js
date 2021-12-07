@@ -3,7 +3,7 @@ import styles from './Profile.module.scss'
 import backgroundProfile from './../../img/backgroundProfile.png'
 import NewPost from "./NewPost/NewPost";
 import Posts from "./Posts/Posts";
-import {useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import actions from "../../redux/actions/action";
 import {useTransition, animated} from "react-spring";
@@ -23,14 +23,16 @@ const Profile = ({
                      setPostLike,
                      setCommentLike
                  }) => {
-    let params = useParams()
-    let dispatch = useDispatch()
+    const params = useParams()
+    const location=useLocation()
+    localStorage.setItem('path',location.pathname)
+    const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.getUser(params.id))
     }, [dispatch,params.id])
     let [showInfo, setShowInfo] = useState(false)
     let [fullscreen, setfullscreen] = useState(false)
-    let animation = useTransition(fullscreen, {
+    const animation = useTransition(fullscreen, {
         from: {
             opacity: 0,
             transform: `translateX(${100}px)`

@@ -105,83 +105,92 @@ $text: #0B4081;
     height: 160px;
   }
 }
-.element{
+
+.element {
   position: fixed;
   width: 1000px;
   height: 1px;
   background: $background;
   animation: oneElement 12s infinite alternate;
   left: 22%;
-  top:50%;
+  top: 50%;
   z-index: 1;
   opacity: 0.3;
-  @include mediumMobile{
+  @include mediumMobile {
     left: 0;
   }
 
 }
-.twoElement{
+
+.twoElement {
   animation: twoElement 20s infinite alternate ease-in-out;
   background: $mainColor;
 }
-.threeElement{
+
+.threeElement {
   animation: threeElement 20s infinite alternate ease-in;
   background: black;
 }
-.fourElement{
+
+.fourElement {
   animation: fourElement 20s infinite alternate ease-in-out;
   background: $text;
 }
-.fiveElement{
+
+.fiveElement {
   animation: fiveElement 20s infinite alternate ease-in-out;
   background: $mainColor;
 }
-.sixElement{
+
+.sixElement {
   animation: sixElement 20s infinite alternate ease-in-out;
   background: black;
 }
-.sevenElement{
+
+.sevenElement {
   animation: sevenElement 20s infinite alternate ease-in-out;
 }
-@keyframes oneElement {
-  0%{
 
-    transform: rotate(45deg) ;
+@keyframes oneElement {
+  0% {
+
+    transform: rotate(45deg);
     width: 500px;
     left: 1%;
     top: 70%;
   }
-  50%{
+  50% {
 
     width: 500px;
-    transform: rotate(100deg) ;
+    transform: rotate(100deg);
     left: 78%;
     top: 70%;
   }
-  100%{
+  100% {
 
     width: 500px;
-    transform: rotate(62deg) ;
+    transform: rotate(62deg);
     left: 45%;
     top: 80%;
   }
 }
+
 @keyframes twoElement {
-  0%{
+  0% {
 
     transform: rotate(1deg);
     width: 700px;
     left: 10%;
     top: 20%;
   }
-  50%{
+  50% {
 
     width: 700px;
     transform: rotate(200deg);
     left: 25%;
     top: 38%;
   }
-  100%{
+  100% {
 
     width: 700px;
     transform: rotate(360deg);
@@ -189,22 +198,23 @@ $text: #0B4081;
     top: 21%;
   }
 }
+
 @keyframes threeElement {
-  0%{
+  0% {
 
     transform: rotate(432deg);
     width: 400px;
     left: 90%;
     top: 70%;
   }
-  50%{
+  50% {
 
     width: 400px;
     transform: rotate(-232deg);
     left: 60%;
     top: 50%;
   }
-  100%{
+  100% {
 
     width: 400px;
     transform: rotate(10deg);
@@ -212,22 +222,23 @@ $text: #0B4081;
     top: 50%;
   }
 }
+
 @keyframes fourElement {
-  0%{
+  0% {
 
     transform: rotate(0deg);
     width: 900px;
     left: 78%;
     top: 65%;
   }
-  50%{
+  50% {
 
     width: 900px;
     transform: rotate(800deg);
     left: 10%;
     top: 12%;
   }
-  100%{
+  100% {
 
     width: 900px;
     transform: rotate(-20deg);
@@ -235,22 +246,23 @@ $text: #0B4081;
     top: 23%;
   }
 }
+
 @keyframes fiveElement {
-  0%{
+  0% {
 
     transform: rotate(36deg);
     width: 800px;
     right: 78%;
     top: 65%;
   }
-  50%{
+  50% {
 
     width: 800px;
     transform: rotate(60deg);
     right: 10%;
     top: 12%;
   }
-  100%{
+  100% {
 
     width: 800px;
     transform: rotate(100deg);
@@ -258,22 +270,23 @@ $text: #0B4081;
     top: 23%;
   }
 }
+
 @keyframes sixElement {
-  0%{
+  0% {
 
     transform: rotate(98deg);
     width: 750px;
-   right: 78%;
+    right: 78%;
     top: 65%;
   }
-  50%{
+  50% {
 
     width: 750px;
     transform: rotate(270deg);
     right: 65%;
     top: 67%;
   }
-  100%{
+  100% {
 
     width: 750px;
     transform: rotate(360deg);
@@ -281,22 +294,23 @@ $text: #0B4081;
     top: 48%;
   }
 }
+
 @keyframes sevenElement {
-  0%{
+  0% {
 
     transform: rotate(-20deg);
     width: 750px;
     left: 0;
     top: 100%;
   }
-  50%{
+  50% {
 
     width: 750px;
     transform: rotate(-10deg);
     left: 45%;
     top: 50%;
   }
-  100%{
+  100% {
 
     width: 750px;
     transform: rotate(0deg);

@@ -7,14 +7,15 @@ import Content from "./components/Content/Content";
 import {useSelector} from "react-redux";
 import loader from './img/loader.gif'
 function App() {
-    let auth = useSelector(state => state.profilePage.auth)
-    let load = useSelector(state => state.profilePage.loader)
+    let auth = useSelector(state => state.titlePage.auth)
+    let load = useSelector(state => state.titlePage.loader)
+    let path = useSelector(state => state.titlePage.lastUserPath)
 
     return (
         <>
             <Header/>
                     <Routes >
-                        <Route exact path='/' element={<SignIn/>}/>
+                        <Route exact path='/' element={auth&&path?<Navigate to={path}/>:<SignIn/>}/>
                         <Route path='*' element={<NotFound/>}/>
                         <Route path='/network/*' element={auth ? <Content/> : <Navigate to='/'/>}/>
                         <Route path='/network' element={<Navigate to='/network/*'/>}/>

@@ -9,6 +9,7 @@ const Nav = () => {
     const dispatch = useDispatch()
     const exit = () => {
         localStorage.removeItem('token')
+        localStorage.removeItem('path')
         dispatch(actions.setAuth())
         navigate('/')
     }

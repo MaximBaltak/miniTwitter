@@ -4,6 +4,7 @@ import OnePost from "./OnePost/OnePost";
 import {useDispatch} from "react-redux";
 import actions from "../../redux/actions/action";
 import {useTransition, animated} from "react-spring";
+import {useLocation} from "react-router-dom";
 
 const AllPosts = ({
                       errorGetPosts,
@@ -15,6 +16,8 @@ const AllPosts = ({
                       setCommentLike
                   }) => {
     let dispatch = useDispatch()
+    const location=useLocation()
+    localStorage.setItem('path',location.pathname)
     useEffect(() => {
         dispatch(actions.getPostsAll())
     }, [dispatch])

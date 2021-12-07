@@ -5,6 +5,7 @@ import User from "./User/User";
 import {useDispatch} from "react-redux";
 import actions from "../../redux/actions/action";
 import Complain from "./Complain/Complain";
+import {useLocation} from "react-router-dom";
 
 const Users = ({
                    errorGetUsers,
@@ -19,6 +20,8 @@ const Users = ({
                    toggleModal
                }) => {
     const dispatch = useDispatch()
+    const location=useLocation()
+    localStorage.setItem('path',location.pathname)
     useEffect(() => {
         dispatch(actions.getUsers())
     }, [dispatch])
